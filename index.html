@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Haven</title>
+    <meta name="description" content="Browse our collection of premium home decor and building materials">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap');
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+        .btn-hover:hover {
+            transform: scale(1.05);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #FF9A8B;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .filter-btn.active {
+            background-color: #FF9A8B;
+            color: white;
+        }
+    </style>
+</head>
+<body class="font-sans bg-light text-dark">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-display font-bold text-primary">Haven</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link font-semibold">Home</a>
+                <a href="products.html" class="nav-link font-semibold text-primary">Products</a>
+                <a href="about.html" class="nav-link font-semibold">About</a>
+                <a href="contact.html" class="nav-link font-semibold">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="p-2 rounded-full bg-primary text-white">
+                    <i data-feather="shopping-cart"></i>
+                </button>
+                <button class="md:hidden p-2 rounded-full bg-light">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Header -->
+    <section class="py-16 bg-gradient-to-r from-secondary to-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-display font-bold mb-4" data-aos="fade-up">Our Product Collection</h1>
+            <p class="text-xl max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Browse our curated selection of premium home decor and building materials</p>
+        </div>
+    </section>
+
+    <!-- Product Filters -->
+    <section class="py-8 bg-white sticky top-16 z-40 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="font-semibold mr-2">Filter:</span>
+                    <div class="inline-flex flex-wrap gap-2">
+                        <button class="filter-btn btn-hover px-4 py-2 rounded-xl bg-light text-dark font-medium active">All</button>
+                        <button class="filter-btn btn-hover px-4 py-2 rounded-xl bg-light text-dark font-medium">Furniture</button>
+                        <button class="filter-btn btn-hover px-4 py-2 rounded-xl bg-light text-dark font-medium">Lighting</button>
+                        <button class="filter-btn btn-hover px-4 py-2 rounded-xl bg-light text-dark font-medium">Textiles</button>
+                        <button class="filter-btn btn-hover px-4 py-2 rounded-xl bg-light text-dark font-medium">Building Materials</button>
+                    </div>
+                </div>
+                <div>
+                    <div class="relative">
+                        <select class="appearance-none bg-light border-0 pl-4 pr-10 py-2 rounded-xl font-medium focus:ring-2 focus:ring-primary focus:outline-none">
+                            <option>Sort by: Popular</option>
+                            <option>Sort by: Newest</option>
+                            <option>Sort by: Price Low to High</option>
+                            <option>Sort by: Price High to Low</option>
+                        </select>
+                        <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                            <i data-feather="chevron-down" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="py-12 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md card-hover" data-aos="fade-up">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="http://static.photos/furniture/640x360/1" alt="Modern sofa" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">New</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Aurora Sofa</h3>
+                        <p class="text-gray-600 mb-4">Plush comfort meets modern design in this statement piece.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-xl">$899</span>
+                            <a href="product.html?id=1" class="btn-hover bg-secondary text-dark px-4 py-2 rounded-xl font-semibold">View in 3D</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="http://static.photos/furniture/640x360/2" alt="Wooden coffee table" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Oak Horizon Table</h3>
+                        <p class="text-gray-600 mb-4">Solid oak construction with a natural finish that ages beautifully.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-xl">$459</span>
+                            <a href="product.html?id=2" class="btn-hover bg-secondary text-dark px-4 py-2 rounded-xl font-semibold">View in 3D</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="http://static.photos/furniture/640x360/3" alt="Ceramic tiles" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Bestseller</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Marina Tiles</h3>
+                        <p class="text-gray-600 mb-4">Handcrafted ceramic tiles with a unique wave pattern.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-xl">$12.99/sqft</span>
+                            <a href="product.html?id=3" class="btn-hover bg-secondary text-dark px-4 py-2 rounded-xl font-semibold">View in 3D</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="http://static.photos/furniture/640x360/4" alt="Pendant light" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Luna Pendant Light</h3>
+                        <p class="text-gray-600 mb-4">Minimalist glass pendant that casts beautiful ambient light.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-xl">$129</span>
+                            <a href="product.html?id=4" class="btn-hover bg-secondary text-dark px-4 py-2 rounded-xl font-semibold">View in 3D</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="http://static.photos/furniture/640x360/5" alt="Area rug" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Nomad Wool Rug</h3>
+                        <p class="text-gray-600 mb-4">Handwoven from 100% New Zealand wool in traditional patterns.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-xl">$349</span>
+                            <a href="product.html?id=5" class="btn-hover bg-secondary text-dark px-4 py-2 rounded-xl font-semibold">View in 3D</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="500">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="http://static.photos/furniture/640x360/6" alt="Wall paneling" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Cove Wall Panels</h3>
+                        <p class="text-gray-600 mb-4">3D textured panels that add depth and interest to any wall.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-xl">$24.99/panel</span>
+                            <a href="product.html?id=6" class="btn-hover bg-secondary text-dark px-4 py-2 rounded-xl font-semibold">View in 3D</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="600">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="http://static.photos/furniture/640x360/7" alt="Dining chairs" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bento Dining Chair</h3>
+                        <p class="text-gray-600 mb-4">Ergonomic design with a sleek, modern aesthetic.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-xl">$179</span>
+                            <a href="product.html?id=7" class="btn-hover bg-secondary text-dark px-4 py-2 rounded-xl font-semibold">View in 3D</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="700">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="http://static.photos/furniture/640x360/8" alt="Floor lamp" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Arc Floor Lamp</h3>
+                        <p class="text-gray-600 mb-4">Adjustable arc design perfect for reading nooks.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-xl">$249</span>
+                            <a href="product.html?id=8" class="btn-hover bg-secondary text-dark px-4 py-2 rounded-xl font-semibold">View in 3D</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-center mt-12">
+                <nav class="inline-flex rounded-md shadow">
+                    <a href="#" class="px-4 py-2 rounded-l-md border border-gray-300 bg-white text-dark font-medium hover:bg-gray-50">Previous</a>
+                    <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-primary font-medium">1</a>
+                    <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-dark font-medium hover:bg-gray-50">2</a>
+                    <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-dark font-medium hover:bg-gray-50">3</a>
+                    <a href="#" class="px-4 py-2 rounded-r-md border border-gray-300 bg-white text-dark font-medium hover:bg-gray-50">Next</a>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="bg-light rounded-2xl p-8 md:p-12 text-center">
+                <h2 class="text-2xl md:text-3xl font-display font-bold mb-4">Get Design Inspiration</h2>
+                <p class="text-gray-600 mb-8 max-w-2xl mx-auto">Subscribe to our newsletter for the latest products, design tips, and exclusive offers.</p>
+                <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-xl border-0 focus:ring-2 focus:ring-primary focus:outline-none">
+                    <button type="submit" class="btn-hover bg-primary text-white px-6 py-3 rounded-xl font-semibold whitespace-nowrap">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-display font-bold mb-4">Haven</h3>
+                    <p class="text-gray-400">Beautiful home decor and premium building materials for your dream space.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="pinterest"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Shop</h4>
+                    <ul class="space-y-2">
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">All Products</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">New Arrivals</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Bestsellers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Sale Items</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Sustainability</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Press</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Help</h4>
+                    <ul class="space-y-2">
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Shipping & Returns</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Size Guide</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2023 Haven. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+        
+        // Filter button functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                // In a real implementation, this would filter the products
+            });
+        });
+        
+        // Mobile menu toggle would go here
+        document.querySelector('.md\\:hidden').addEventListener('click', function() {
+            // Mobile menu toggle functionality
+            console.log('Mobile menu clicked');
+        });
+    </script>
+</body>
+</html>
